@@ -8,14 +8,14 @@ on:
 jobs:
  
   trigger-build:
-    uses: multi-repo/workflows/.github/workflows/kaniko-build.yml@main
+    uses: multi-repo/workflows/.github/workflows/kaniko-build.yaml@main
     with:
       image-name: ${{ github.repository }}/redis
     secrets:
       personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           
   trigger-cleanup:
-      uses: multi-repo/workflows/.github/workflows/clean-registry.yml@main
+      uses: multi-repo/workflows/.github/workflows/clean-registry.yaml@main
       with:
         owner: multi-repo
         repository: redis 
